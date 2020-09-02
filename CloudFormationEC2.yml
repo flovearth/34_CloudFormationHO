@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: This template creates an EC2 instance which enables SSH connection. 
+
+Resources:
+  SimpleCFInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c115dbd34c69a004
+      InstanceType: t2.micro
+      KeyName: 20200824
+      SecurityGroups:
+        - WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: CF-instanceEC2
+      
